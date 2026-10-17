@@ -9,9 +9,27 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.9.2",
+    "@lottiefiles/dotlottie-react": "^0.20.0",
+    "@reduxjs/toolkit": "^2.13.0",
+    "@repo/ui": "workspace:*",
+    "@serwist/next": "^9.5.13",
+    "async-mutex": "^0.5.0",
+    "axios": "^1.20.0",
+    "date-fns": "4.4.0",
+    "jose": "^6.2.12",
+    "lucide-react": "1.47.0",
     "next": "16.3.5",
+    "nextjs-toploader": "^3.9.17",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "react-hook-form": "^7.90.0",
+    "react-redux": "^9.3.0",
+    "react-shadcn-table": "^2.0.4",
+    "socket.io-client": "^4.8.4",
+    "sonner": "2.0.8",
+    "zod": "^4.6.7",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
