@@ -57,7 +57,9 @@ export default async function middleware(req: NextRequest) {
 
   const role = session?.role as Role[];
   //  const hasRole = role?.some((r) => Object.values(Role).includes(r));
-  const hasRole = role?.some((r) => [Role.ADMIN].includes(r));
+  const hasRole = role?.some((r) =>
+    [Role.ADMIN, Role.CUSTOMER, Role.AGENT].includes(r),
+  );
 
   // no session, protected route -> sign-in
   if (needsAuth && (!session || !hasRole)) {
