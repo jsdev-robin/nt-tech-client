@@ -1,5 +1,7 @@
+import HelpCenter from '@/components/site/pages/dashboard/help';
+
 const page = () => {
-  return <div>page</div>;
+  return <HelpCenter />;
 };
 
 export default page;
