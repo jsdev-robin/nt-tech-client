@@ -66,11 +66,6 @@ const HeadingMenu = () => {
               Profile
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href={`${process.env.NEXT_PUBLIC_ACCOUNT_ORIGIN}/settings`}>
-              Settings
-            </Link>
-          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
