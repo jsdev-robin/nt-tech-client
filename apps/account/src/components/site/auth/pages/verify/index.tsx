@@ -46,6 +46,7 @@ const Verify = () => {
       verify(data)
         .unwrap()
         .then((res) => {
+          // eslint-disable-next-line @next/next/no-location-assign-relative-destination
           window.location.href = '/sign-in';
           return res;
         }),

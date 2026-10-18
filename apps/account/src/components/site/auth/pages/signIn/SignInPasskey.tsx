@@ -75,6 +75,16 @@ const SignInPasskey = () => {
                       `${process.env.NEXT_PUBLIC_ADMIN_ORIGIN}/dashboard/overview`,
                     );
                     router.refresh();
+                  } else if (res.payload.role.includes(Role.CUSTOMER)) {
+                    router.replace(
+                      `${process.env.NEXT_PUBLIC_CUSTOMER_ORIGIN}/dashboard/overview`,
+                    );
+                    router.refresh();
+                  } else if (res.payload.role.includes(Role.AGENT)) {
+                    router.replace(
+                      `${process.env.NEXT_PUBLIC_CUSTOMER_ORIGIN}/dashboard/overview`,
+                    );
+                    router.refresh();
                   } else {
                     router.replace('/settings');
                     router.refresh();

@@ -53,7 +53,7 @@ const TwoFaVerifyBackup = () => {
             router.refresh();
           } else if (res.payload.role.includes(Role.OWNER)) {
             router.replace(
-              `${process.env.NEXT_PUBLIC_OWNER_ORIGIN}/dashboard/overview`,
+              `${process.env.NEXT_PUBLIC_CUSTOMER_ORIGIN}/dashboard/overview`,
             );
             router.refresh();
           } else {
