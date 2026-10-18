@@ -1,7 +1,12 @@
 'use client';
 
 import { useSignoutMutation } from '@/services/api/endpoints/auth/core/authApi';
-import { Button } from '@repo/ui/components/button';
+import useMe from '@/services/api/hooks/useMe';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@repo/ui/components/avatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,6 +21,7 @@ import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 
 const HeadingMenu = () => {
+  const me = useMe();
   const [signout, { isLoading }] = useSignoutMutation();
   const router = useRouter();
 
@@ -39,16 +45,31 @@ const HeadingMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Avatar>
+          <AvatarImage
+            src={me?.profile?.avatar?.url}
+            alt={me?.profile?.displayName}
+          />
+          <AvatarFallback>
+            {me?.profile?.givenName?.[0]}
+            {me?.profile?.familyName?.[0]}
+          </AvatarFallback>
+        </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="end">
         <DropdownMenuGroup>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuItem asChild>
-            <Link href="/profile">Profile</Link>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_ACCOUNT_ORIGIN}/settings/profile`}
+            >
+              Profile
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/settings">Settings</Link>
+            <Link href={`${process.env.NEXT_PUBLIC_ACCOUNT_ORIGIN}/settings`}>
+              Settings
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
