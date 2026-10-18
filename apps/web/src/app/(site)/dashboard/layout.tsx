@@ -1,10 +1,5 @@
-'use client';
-
-import React from 'react';
-import Loader from './loading';
-
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-  return <Loader>{children}</Loader>;
+const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
+  return <main className="space-y-4">{children}</main>;
 };
 
 export default DashboardLayout;
